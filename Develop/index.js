@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs')
 
 //questions for user
 inquirer
@@ -47,29 +48,14 @@ inquirer
           },
     ])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function to write README file
-function writeToFile(fileName, data) {
-}
+
+    fs.writeToFile(fileName, data, (err) => {
+        if (err) throw err;
+        console.log('file saved');
+    });
+
+
 
 // function to initialize program
 function init() {
