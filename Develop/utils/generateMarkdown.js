@@ -24,7 +24,7 @@ function generateMarkdown(data) {
   
   
   # Contact
-  *Github: ${data.git}
+  *Github: https://github.com/${data.git}
   *Email: ${data.email}
   `;
 

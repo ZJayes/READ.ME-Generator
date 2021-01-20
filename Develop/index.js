@@ -1,7 +1,12 @@
 const inquirer = require('inquirer');
-const fs = require('fs')
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
+const util = require('util');
+const { fetchAsyncQuestionPropertyQuestionProperty } = require('inquirer/lib/utils/utils');
+const writeFileAsync = util.promisify(fs.writeFile);
 
-//questions for user
+
+const questions = () =>
 inquirer
     .prompt([
         {
@@ -37,7 +42,7 @@ inquirer
         },
         {
             type: 'input',
-            message: '',
+            message: 'What tests did you run?',
             name: 'tests',
         },
         {
@@ -50,17 +55,10 @@ inquirer
 
 // function to write README file
 
-    fs.writeToFile(fileName, data, (err) => {
-        if (err) throw err;
-        console.log('file saved');
-    });
+    
+questions()
+.then((answers)=> fs.writeFileAsync('README.md', generateMarkdown(answers)))
+.then(()=> console.log('Success you wrote a README.md!'))
+.catch((err)=> console.error(err));
 
 
-
-// function to initialize program
-function init() {
-
-}
-
-// function call to initialize program
-init();
