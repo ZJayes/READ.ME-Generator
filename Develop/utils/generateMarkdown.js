@@ -10,22 +10,22 @@ function generateMarkdown(data) {
   
   
   * #installation
-  ${installation}
+  ${data.installation}
   *usage
-  ${usage}
+  ${data.usage}
   *contribution
-  ${contribution}
+  ${data.contribution}
   *instructions
-  ${instructions}
+  ${data.instructions}
   *credit
-  ${credit}
+  ${data.credit}
   *license
-  ${license}
+  ${data.license}
   
   
   # Contact
-  *Github: ${git}
-  *Email: ${email}
+  *Github: ${data.git}
+  *Email: ${data.email}
   `;
 
 

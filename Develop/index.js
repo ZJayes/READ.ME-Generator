@@ -6,7 +6,7 @@ inquirer
     .prompt([
         {
             type: 'input',
-            meessag: 'What is the time',
+            meessage: 'What is the time',
             name: 'title',
         },
         {
